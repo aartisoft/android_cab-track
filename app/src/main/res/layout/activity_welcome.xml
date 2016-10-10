@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+
+android:id="@+id/root_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_centerInParent="true"
+android:background="@color/appBackground"
+android:orientation="vertical">
+
+<include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar_global" />
+
+<LinearLayout
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:orientation="vertical">
+
+
+    <com.xome.aparamasi.cab_track.custom.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Welcome Employee"
+        android:id="@+id/employeelabel"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:fontName="MuseoSansRounded.ttf" />
+
+    <com.xome.aparamasi.cab_track.custom.CircleImageView
+        android:id="@+id/circleBankersImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/man"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="2dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/xomepic" />
+
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Start Trip"
+            android:id="@+id/start"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/emer" />
+
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Emergency Contacts"
+            android:id="@+id/settings"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_relationship_driver" />
+
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Driver details"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/driverlabel"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/locate" />
+
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Log Out"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/logout"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@color/appBackground"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_global" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp">
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Emergency Contacts"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+        </LinearLayout>
+
+        <com.xome.aparamasi.cab_track.custom.FontEdittext
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/inset_username"
+            android:hint="Contact Name"
+            android:id="@+id/editText"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+        <com.xome.aparamasi.cab_track.custom.FontEdittext
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/inset_phone"
+            android:hint="Contact Number"
+            android:id="@+id/editText2"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:id="@+id/updatenumber1"
+            android:background="@color/colorPrimary">
+
+
+            <com.xome.aparamasi.cab_track.custom.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Update Contact"
+
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:fontName="MuseoSansRounded.ttf" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

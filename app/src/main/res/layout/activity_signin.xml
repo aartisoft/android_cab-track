@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/root_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_centerInParent="true"
+android:background="@color/appBackground"
+android:orientation="vertical">
+
+<LinearLayout
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:src="@drawable/car" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <com.xome.aparamasi.cab_track.custom.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Please login with your corp Login Name"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+        <com.xome.aparamasi.cab_track.custom.FontEdittext
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/inset_username"
+            android:hint="Username"
+            android:id="@+id/editText"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+        <com.xome.aparamasi.cab_track.custom.FontEdittext
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/inset_password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:id="@+id/editText2"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+        <com.xome.aparamasi.cab_track.custom.FontButton
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/orange_drawable"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:fontName="MuseoSansRounded.ttf" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</RelativeLayout>

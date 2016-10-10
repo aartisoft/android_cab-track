@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "631849066639",
+    "firebase_url": "https://cab-track.firebaseio.com",
+    "project_id": "cab-track",
+    "storage_bucket": "cab-track.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631849066639:android:c44f11651b02ad3e",
+        "android_client_info": {
+          "package_name": "com.xome.aparamasi.cab_track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631849066639-85f5t5hdq6l415huj7vb6r0vq28i3bgt.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "631849066639-slilalut4bigk8le5s8vbnq87hiarcpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxf2JdP2sVCnlUet480MgWXmtvYzi0HvY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

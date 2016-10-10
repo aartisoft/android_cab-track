@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@color/appBackground"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_global" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:gravity="center"
+            android:background="@color/colorPrimary">
+
+            <com.xome.aparamasi.cab_track.custom.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Scan QR Code"
+                android:id="@+id/qrscan"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:fontName="MuseoSansRounded.ttf" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="65dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp">
+
+            <com.xome.aparamasi.cab_track.custom.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="---------------OR--------------"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:id="@+id/driverlabel"
+                app:fontName="MuseoSansRounded.ttf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:background="@color/colorPrimary">
+
+            <com.xome.aparamasi.cab_track.custom.FontEdittext
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/border"
+                android:hint="Enter the Trip ID"
+                android:gravity="center"
+                android:id="@+id/editText"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontName="MuseoSansRounded.ttf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:background="@color/colorPrimary">
+
+
+            <com.xome.aparamasi.cab_track.custom.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Validate Trip"
+                android:id="@+id/valtrip"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:fontName="MuseoSansRounded.ttf" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
