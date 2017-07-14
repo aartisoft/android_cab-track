@@ -49,21 +49,29 @@ android:orientation="vertical">
             android:textSize="16sp"
             app:fontName="MuseoSansRounded.ttf" />
 
-        <com.xome.aparamasi.cab_track.custom.FontEdittext
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/border"
-            android:drawableLeft="@drawable/inset_username"
-            android:hint="Username"
-            android:id="@+id/editText"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:fontName="MuseoSansRounded.ttf" />
+            android:layout_height="wrap_content" >
 
+            <com.xome.aparamasi.cab_track.custom.FontEdittext
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/border"
+                android:drawableLeft="@drawable/inset_username"
+                android:drawablePadding="3dp"
+                android:hint="Username"
+                android:id="@+id/editText"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontName="MuseoSansRounded.ttf" >
+                <requestFocus />
 
+            </com.xome.aparamasi.cab_track.custom.FontEdittext>
+
+        </FrameLayout>
         <com.xome.aparamasi.cab_track.custom.FontEdittext
             android:layout_width="match_parent"
             android:layout_height="50dp"

@@ -23,6 +23,7 @@ public class SinginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String name = preferences.getString("user", "");
+        String status = preferences.getString("status","");
         if(name != "") {
             startActivity(new Intent(SinginActivity.this, WelcomeActivity.class));
             finish();
@@ -52,8 +53,13 @@ public class SinginActivity extends BaseActivity {
     public void onSubmit(){
         final FontEdittext empIdTextView = (FontEdittext) findViewById(R.id.editText);
         final FontEdittext passTextView = (FontEdittext) findViewById(R.id.editText2);
-        final String userId = empIdTextView.getText().toString();
+        final String userId = empIdTextView.getText().toString().toLowerCase();
         final String password = passTextView.getText().toString();
+        if(userId.equals("") || password.equals(""))
+        {
+            Toast.makeText(getBaseContext(), "Please enter valid credentials", Toast.LENGTH_SHORT).show();
+            return;
+        }
         User user = new User();
         user.setUsername(userId);
         user.setPassword(password);
@@ -66,15 +72,17 @@ public class SinginActivity extends BaseActivity {
             public void onSuccess(Object response) {
                 VolleyServiceCalls.getGsonParser().fromJson(response.toString(), BaseResponse.class);
                //----------------- Here It goesse -----------------
-                editor.putString("user",userId);
-                editor.putString("password",password);
-                editor.apply();
+
                 Getnumber getnumber = new Getnumber();
                 getnumber.setUsername(userId);
-                progress.dismiss();
+
                 VolleyServiceCalls.getVolleyCallInstance().getUserAttributes(getnumber, new IServiceListener() {
                     @Override
                     public void onSuccess(Object response) {
+                        editor.putString("user",userId);
+                        editor.putString("password",password);
+                        editor.apply();
+                        progress.dismiss();
                         PhoneResponse response1 = VolleyServiceCalls.getGsonParser().fromJson(response.toString(), PhoneResponse.class);
                         editor.putString("alternatename",response1.getAlternateName());
                         editor.putString("alternateno",response1.getPhonenumber());
@@ -88,6 +96,7 @@ public class SinginActivity extends BaseActivity {
 
                     @Override
                     public void onError() {
+                        progress.dismiss();
                         Toast.makeText(getBaseContext(), "Wrong Credentials!", Toast.LENGTH_SHORT).show();
                     }
                 });

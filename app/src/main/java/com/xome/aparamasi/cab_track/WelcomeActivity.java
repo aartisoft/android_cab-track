@@ -1,10 +1,12 @@
 package com.xome.aparamasi.cab_track;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
@@ -24,10 +26,16 @@ import com.xome.aparamasi.cab_track.volley.VolleyServiceCalls;
 
 public class WelcomeActivity extends BaseActivity {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
+    public static ProgressDialog progress;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        progress  = new ProgressDialog(this);
+        progress.setTitle("Loading");
+        progress.setMessage("Please wait while navigating...");
+        progress.setCancelable(false);
+        progress.setCanceledOnTouchOutside(false);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String name = preferences.getString("displayname", "");
         FontTextView ft = (FontTextView) findViewById(R.id.employeelabel);
@@ -37,12 +45,14 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                //disableButtons();
+                progress.show();
                startTrip();
             }
         });
         findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progress.show();
                 //disableButtons();
                onLogOut();
             }
@@ -152,6 +162,7 @@ public class WelcomeActivity extends BaseActivity {
                     editor.apply();
                    final String drivername = preferences.getString("driver","");
                    if(drivername.equals("")){
+                       progress.dismiss();
                        Toast.makeText(getBaseContext(), "No Trips generated for you", Toast.LENGTH_SHORT).show();
                    }
                    else {
@@ -163,18 +174,32 @@ public class WelcomeActivity extends BaseActivity {
                                Trip response1 = VolleyServiceCalls.getGsonParser().fromJson(response.toString(), Trip.class);
                                editor.putString("tripid", response1.getTripID());
                                editor.putString("driverid", response1.getDriverID());
+                               editor.putString("status","1");
                                editor.apply();
-                            startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                           }
+                               final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
+                               if ( !manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+                                   Toast.makeText(getBaseContext(), "Please turn on your GPS", Toast.LENGTH_SHORT).show();
+                                   progress.dismiss();
+                                   startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                               }
+                               else {
+                                   Intent myIntent = new Intent(getBaseContext(), MainActivity.class);
+                                   progress.dismiss();
+                                   startActivity(myIntent);
+                               }
+                             }
 
                            @Override
                            public void onError() {
+                               progress.dismiss();
                            }
                        });
                    }
                 }
                 else{
                    Toast.makeText(getBaseContext(), "No Trips generated for you", Toast.LENGTH_SHORT).show();
+                   progress.dismiss();
 
                }
 
@@ -182,6 +207,7 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onError() {
+                progress.dismiss();
             }
         });
 
@@ -231,19 +257,26 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onError() {
+
             }
         });
         editor.putString("user","");
         editor.putString("password","");
         editor.putString("deviceID","");
         editor.apply();
-
+        progress.dismiss();
 //        enableButtons();
         Intent myIntent = new Intent(getBaseContext(),SinginActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(myIntent);
         finish();
 
-//        Toast.makeText(WelcomeActivity.this, "Log out", Toast.LENGTH_SHORT).show();
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        progress.dismiss();
+        progress=null;
+    }
+
 }

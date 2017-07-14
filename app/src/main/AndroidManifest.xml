@@ -34,21 +34,29 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCAPglhZHfcGaU8pteeQVhTsFgpl-36368" />
 
-        <activity android:name=".SinginActivity">
+        <activity android:name=".SinginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".QRActivity">
+        <activity android:name=".SettingsActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QRActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".WelcomeActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <!--             GCM Receiver -->
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
@@ -82,7 +90,9 @@
         <activity
             android:name=".DriverActivity"
             android:label="@string/title_activity_driver"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Toast;
 
 import com.xome.aparamasi.cab_track.custom.FontEdittext;
 import com.xome.aparamasi.cab_track.interfaces.IServiceListener;
@@ -85,6 +86,7 @@ public class SettingsActivity extends BaseActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("alternatename", altname);
                     editor.putString("alternateno", number);
+                    Toast.makeText(getBaseContext(), "Emergency Contact has been successfully updated", Toast.LENGTH_SHORT).show();
                     editor.apply();
                     Intent myIntent = new Intent(getBaseContext(), WelcomeActivity.class);
                     myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

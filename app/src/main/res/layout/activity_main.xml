@@ -22,21 +22,10 @@
         android:layout_below="@+id/toolbar"
         android:orientation="vertical">
 
-        <com.xome.aparamasi.cab_track.custom.FontTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="You have started your trip"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:fontName="MuseoSansRounded.ttf" />
-
         <LinearLayout
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="250dp" >
+            android:layout_height="350dp">
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/map"
@@ -49,7 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="55dp"
             android:layout_marginRight="55dp"
@@ -93,9 +82,9 @@
 
             <com.xome.aparamasi.cab_track.custom.FontTextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="Tap on Emergency"
                 android:id="@+id/emergency"
                 android:textColor="@color/white"
